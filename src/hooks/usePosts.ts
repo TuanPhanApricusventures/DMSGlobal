@@ -15,7 +15,6 @@ export function usePosts() {
     setLoading(true);
     try {
       const response = await fetchTimelinePosts(page);
-      console.log(response.data.data);
       setPosts((prevPosts) => [...prevPosts, ...response.data.data]);
       setPage((prevPage) => prevPage + 1);
       setHasMore(page < response.data.totalPages);
